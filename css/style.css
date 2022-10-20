@@ -12,18 +12,25 @@ body {
 .container {
   display: flex;
   flex-wrap: wrap;
-  max-width: 1000px;
-  margin: 20px auto;
+  max-width: 500px;
+  margin: 50px auto;
+
 }
 
 .box{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80px;
-  height: 80px;
-  margin: 10px;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
   border: 1px solid black;
 }
+
+.azzurro {
+  background-color: skyblue;
+}
+
+
 
 
