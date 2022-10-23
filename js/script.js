@@ -24,6 +24,8 @@ function generaCaselle(livelloDifficolta) {
     box.className = 'box';
     console.log(box);
     box.innerHTML = i+1;
+
+    box.setAttribute('id', i);
   
     box.addEventListener('click', function() {
       this.classList.add('azzurro');
@@ -74,6 +76,7 @@ function bombsGenerated(livelloDifficolta){
     const bomb = randomNumber(1,livelloDifficolta);
     if(!bombsArray.includes(bomb)){
       bombsArray.push(bomb);
+      this.classList.add('red');
     }
 
   }
