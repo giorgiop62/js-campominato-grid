@@ -76,7 +76,6 @@ function bombsGenerated(livelloDifficolta){
     const bomb = randomNumber(1,livelloDifficolta);
     if(!bombsArray.includes(bomb)){
       bombsArray.push(bomb);
-      this.classList.add('red');
     }
 
   }
