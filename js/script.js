@@ -6,8 +6,11 @@ Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro e
 const container = document.querySelector('.container');
 const button = document.getElementById('playBtn');
 const select = document.getElementById('selectDifficolta');
+const bombsNumber = 16;
 
 var nuovaPartita = false;
+
+button.addEventListener('click', playBtnClick);
 
 function reset() {
   container.replaceChildren();
@@ -23,12 +26,12 @@ function generaCaselle(livelloDifficolta) {
     box.innerHTML = i+1;
   
     box.addEventListener('click', function() {
-      console.log('cliccato');
       this.classList.add('azzurro');
     })
     
     container.append(box);
   }
+
 }
 
 function playBtnClick() {
@@ -59,4 +62,22 @@ function playBtnClick() {
   button.textContent = "Rigioca";
 }
 
-button.addEventListener('click', playBtnClick);
+function randomNumber(max, min){
+  return Math.floor(Math.random()*(max - min + 1)) + min;
+}
+
+function bombsGenerated(livelloDifficolta){
+  const bombsArray = [];
+  console.log(bombsArray);
+
+  while(bombsArray.length < bombsNumber){
+    const bomb = randomNumber(1,livelloDifficolta);
+    if(!bombsArray.includes(bomb)){
+      bombsArray.push(bomb);
+    }
+
+  }
+  return bombsArray;
+}
+
+
